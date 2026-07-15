@@ -170,6 +170,23 @@
     overflow:hidden;
   }
   .dept-visual svg{width:78%;height:78%;}
+  .dept-visual img{
+    width:100%;height:100%;object-fit:cover;
+    filter:grayscale(55%) contrast(1.04) saturate(.9) brightness(0.99);
+    transition:filter .7s ease, transform .7s ease;
+    transform:scale(1.01);
+  }
+  .dept-visual:hover img{filter:grayscale(0%) saturate(1);transform:scale(1.045);}
+
+  .subcard-photo{
+    width:100%;aspect-ratio:16/10;overflow:hidden;margin-top:16px;border-radius:1px;
+  }
+  .subcard-photo img{
+    width:100%;height:100%;object-fit:cover;
+    filter:grayscale(60%) contrast(1.05);
+    transition:filter .6s ease;
+  }
+  .subcard:hover .subcard-photo img{filter:grayscale(0%);}
 
   .dept-num{
     font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.28em;
@@ -209,6 +226,11 @@
   .subcard .en{font-size:11px;color:var(--circuit);display:block;margin-bottom:10px;}
   .subcard h3{font-size:17px;margin-bottom:12px;}
   .subcard p{font-size:13px;color:var(--ink-soft);margin:0;}
+  .subcard .sublink{
+    display:inline-block;margin-top:12px;font-size:12px;letter-spacing:.06em;
+    color:var(--circuit);border-bottom:1px solid var(--circuit);padding-bottom:2px;
+  }
+  .subcard .sublink:hover{opacity:.65;}
   @media (max-width:900px){.subcard-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:560px){.subcard-grid{grid-template-columns:1fr;}}
 
@@ -304,7 +326,8 @@
       </div>
       <div class="about-grid reveal">
         <p>
-          メルシア(Mercia)は、フランス語の「メルシー(感謝)」に由来する名前です。
+          メルシア(Mercia)は、フランス語で「感謝」を意味する「merci」と、
+          「akiko」の頭文字「a」を組み合わせた名前です。
           花を贈るという行為も、レースを支えるという仕事も、
           誰かの大切な瞬間に寄り添う仕事だと私たちは考えています。
           花部門では空間や記念日を彩る仕事を、レースマネジメント部門では
@@ -313,9 +336,8 @@
         <div class="fact-list">
           <dl><dt class="en">COMPANY</dt><dd>株式会社メルシア(Mercia Co., Ltd.)</dd></dl>
           <dl><dt class="en">DEPARTMENTS</dt><dd>花部門 / レースマネジメント部門</dd></dl>
-          <dl><dt class="en">ESTABLISHED</dt><dd class="tbd">準備中</dd></dl>
-          <dl><dt class="en">ADDRESS</dt><dd class="tbd">準備中</dd></dl>
-          <dl><dt class="en">TEL</dt><dd class="tbd">準備中</dd></dl>
+          <dl><dt class="en">ADDRESS</dt><dd>〒805-0034<br>福岡県北九州市八幡東区清田2-14-27</dd></dl>
+          <dl><dt class="en">TEL</dt><dd>093-651-5488</dd></dl>
         </div>
       </div>
     </div>
@@ -344,11 +366,10 @@
           一輪一輪の表情を見極めながら、その場にしかない一つの景色をつくります。
         </p>
         <ul class="service-list">
-          <li><span>ブライダル装花</span><span class="num en">01</span></li>
-          <li><span>空間・店舗装飾</span><span class="num en">02</span></li>
-          <li><span>ギフトアレンジメント</span><span class="num en">03</span></li>
-          <li><span>フラワーレッスン</span><span class="num en">04</span></li>
+          <li><span>ギフトアレンジメント</span><span class="num en">01</span></li>
+          <li><span>供花・お悔やみの花(Funeral Gift)</span><span class="num en">02</span></li>
         </ul>
+
         <a href="#contact" class="btn en">FLOWER DEPARTMENT のご相談 →</a>
       </div>
     </div>
@@ -360,14 +381,7 @@
   <section class="dept reverse" id="race">
     <div class="wrap dept-inner">
       <div class="dept-visual reveal">
-        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 190 C60 190 60 150 90 150 C130 150 120 90 160 90 C185 90 180 60 180 30"
-                stroke="#37475A" stroke-width="1.4"/>
-          <circle cx="20" cy="190" r="4" fill="#37475A"/>
-          <circle cx="180" cy="30" r="4" fill="#37475A"/>
-          <path d="M10 200 L30 200 M15 195 L15 205 M25 195 L25 205" stroke="#37475A" stroke-width="1" opacity="0.5"/>
-          <path d="M0 30 L20 30 M0 34 L20 34 M0 38 L20 38" stroke="#37475A" stroke-width="1" opacity="0.35"/>
-        </svg>
+        <img src="assets/race-car.jpg" alt="メルシア レースマネジメント部門 参戦車両">
       </div>
       <div class="reveal">
         <p class="dept-num en">DEPARTMENT 02 — RACE MANAGEMENT</p>
@@ -376,7 +390,7 @@
           ドライバーのキャリア設計からチーム運営、スポンサーシップ、大会運営のサポートまで。
           コースの上の一瞬の走りを支えるのは、コースの外での地道な調整だと考えています。
         </p>
-        <a href="#contact" class="btn en">RACE MANAGEMENT のご相談 →</a>
+        <a href="mailto:tagaharaakiko@yahoo.co.jp" class="btn en">RACE MANAGEMENT のご相談 →</a>
       </div>
     </div>
 
@@ -391,12 +405,16 @@
           <div class="subcard">
             <span class="en">DRIVER</span>
             <h3>ドライバーサポート</h3>
-            <p>契約・移籍・トレーニング計画など、選手個人のキャリアを長期的に支援します。</p>
+            <p>当社所属プロドライバー・田ヶ原章蔵のキャリアを、契約・トレーニング計画・広報活動を含め長期的に支援しています。</p>
+            <div class="subcard-photo"><img src="assets/driver-portrait.jpg" alt="プロドライバー 田ヶ原章蔵" style="object-position:center 10%;"></div>
+            <a class="sublink" href="http://showplanning.net/index2.html" target="_blank" rel="noopener">田ヶ原章蔵 公式サイト →</a>
           </div>
           <div class="subcard">
             <span class="en">TEAM</span>
             <h3>チーム運営</h3>
-            <p>参戦体制の構築から現場オペレーション、レギュレーション対応までをサポートします。</p>
+            <p>当社サポートチーム「Audi Team SHOW APEX」の参戦体制構築から現場オペレーションまでをサポートしています。</p>
+            <div class="subcard-photo"><img src="assets/race-car.jpg" alt="Audi Team SHOW APEX 参戦車両"></div>
+            <a class="sublink" href="https://www.showapex.com/" target="_blank" rel="noopener">Audi Team SHOW APEX 公式サイト →</a>
           </div>
           <div class="subcard">
             <span class="en">PARTNER</span>
@@ -405,8 +423,15 @@
           </div>
           <div class="subcard">
             <span class="en">EVENT</span>
-            <h3>大会運営サポート</h3>
-            <p>レースイベントの企画・運営における実務面をパートナーとして支援します。</p>
+            <h3>イベントサポート</h3>
+            <p>観戦ツアーガイドの派遣など、レースイベントに関わるサポートを行っています。内容はご相談の上で調整いたします。</p>
+            <div class="subcard-photo"><img src="assets/event-support.jpg" alt="イベントサポート ドライバーとファンの交流"></div>
+            <div style="display:flex;gap:12px;align-items:center;margin-top:12px;">
+              <div style="width:88px;aspect-ratio:4/3;overflow:hidden;flex-shrink:0;">
+                <img src="assets/tour-guide.jpg" alt="観戦ツアーガイド" style="width:100%;height:100%;object-fit:cover;filter:grayscale(55%) contrast(1.04);">
+              </div>
+              <p style="font-size:12px;color:var(--ink-soft);margin:0;">観戦ツアーガイドの様子</p>
+            </div>
           </div>
         </div>
 
@@ -418,12 +443,12 @@
           </div>
           <div class="news-item">
             <span class="date en">— . —</span>
-            <span>準備中 — 所属ドライバー・チーム情報を掲載予定です</span>
+            <span>所属プロドライバー 田ヶ原章蔵、写真掲載準備中</span>
             <span class="tag">DRIVER</span>
           </div>
           <div class="news-item">
             <span class="date en">— . —</span>
-            <span>準備中 — 活動実績・参戦レースを掲載予定です</span>
+            <span>サポートチーム Audi Team SHOW APEX、活動実績掲載準備中</span>
             <span class="tag">ACTIVITY</span>
           </div>
         </div>
@@ -448,7 +473,8 @@
       <div>
         <p class="logo-f">MERCIA</p>
         <p>株式会社メルシア</p>
-        <p class="prep">住所・電話番号は準備中です</p>
+        <p>〒805-0034<br>福岡県北九州市八幡東区清田2-14-27</p>
+        <p>TEL: 093-651-5488</p>
       </div>
       <div>
         <h3 class="en">DEPARTMENTS</h3>
@@ -460,7 +486,8 @@
       </div>
       <div>
         <h3 class="en">CONTACT</h3>
-        <p class="prep">お問い合わせフォームは準備中です。<br>内容確定後、こちらにご案内を掲載します。</p>
+        <p>レースマネジメント部門のご相談は<br><a href="mailto:tagaharaakiko@yahoo.co.jp" style="color:inherit;border-bottom:1px solid rgba(246,241,234,0.4);">tagaharaakiko@yahoo.co.jp</a> へ</p>
+        <p class="prep">花部門のお問い合わせ窓口は準備中です</p>
       </div>
     </div>
     <div class="foot-bottom">
